@@ -85,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
                                 runOnUiThread(() -> {
                                     createNewQuestion();
+                                    timer = 30;
+                                    timerText.setText("" + timer);
+                                    timerSettings();
                                 });
 
                             }).start();
@@ -119,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
     public void createNewQuestion(){
         question = new Question();
         questionText.setText(question.getQuestion());
+        answerUser.getText().clear();
     }
 
     public void timerSettings(){
